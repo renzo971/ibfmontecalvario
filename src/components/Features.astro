@@ -1,94 +1,107 @@
 ---
+import jovenes from "../images/ministerios/jovenes.png";
+import rondalla from "../images/ministerios/rondalla.png";
+import instituto from "../images/ministerios/instituto.png";
+import kids from "../images/ministerios/kids.png";
+import sembradoras from "../images/ministerios/sembradores.png";
+import femenil from "../images/ministerios/femenil.jpg";
+import ImageFlip from "./ImageFlip.astro";
 const features = [
-	{
-		icon: '🙏',
-		title: 'Oración',
-		description: 'Únete a nuestros grupos de oración y fortalece tu fe. Ofrecemos sesiones diarias de oración y vigilias mensuales.'
-	},
-	{
-		icon: '📖',
-		title: 'Estudio Bíblico',
-		description: 'Profundiza en las escrituras con nuestros estudios semanales. Ofrecemos clases para todas las edades y niveles de conocimiento.'
-	},
-	{
-		icon: '🤝',
-		title: 'Comunidad',
-		description: 'Forma parte de una comunidad amorosa y solidaria. Participa en nuestros eventos sociales, grupos de apoyo y proyectos de servicio comunitario.'
-	},
-	{
-		icon: '🎵',
-		title: 'Adoración',
-		description: 'Eleva tu espíritu con nuestra música inspiradora. Únete a nuestro coro o banda de alabanza.'
-	},
-	{
-		icon: '👪',
-		title: 'Familia',
-		description: 'Fortalece los lazos familiares con nuestros programas especiales para parejas, jóvenes y niños.'
-	},
-	{
-		icon: '🌍',
-		title: 'Misiones',
-		description: 'Participa en nuestras misiones locales e internacionales. Ayúdanos a compartir el amor de Dios en todo el mundo.'
-	}
+  {
+    title: "Jovenes Monte Calvario",
+    description:
+      "Únete a nuestros grupos de oración y fortalece tu fe. Ofrecemos sesiones diarias de oración y vigilias mensuales.",
+    img: jovenes,
+  },
+  {
+    title: "Rondalla Bautista Monte Calvario",
+    description:
+      "Profundiza en las escrituras con nuestros estudios semanales. Ofrecemos clases para todas las edades y niveles de conocimiento.",
+    img: rondalla,
+  },
+  {
+    title: "Rondalla Bautista Femenil Monte Calvario",
+    description:
+      "Profundiza en las escrituras con nuestros estudios semanales. Ofrecemos clases para todas las edades y niveles de conocimiento.",
+    img: femenil,
+  },
+
+  {
+    title: "Instituto Bautista",
+    description:
+      "Forma parte de una comunidad amorosa y solidaria. Participa en nuestros eventos sociales, grupos de apoyo y proyectos de servicio comunitario.",
+    img: instituto,
+  },
+  {
+    title: "Monte Calvario Kids",
+    description:
+      "Eleva tu espíritu con nuestra música inspiradora. Únete a nuestro coro o banda de alabanza.",
+    img: kids,
+  },
+  {
+    title: "Sembradoras MC",
+    description:
+      "Fortalece los lazos familiares con nuestros programas especiales para parejas, jóvenes y niños.",
+    img: sembradoras,
+  },
 ];
 ---
+
 <section class="features">
-	<div class="container">
-		<h2>Nuestra Misión y Ministerios</h2>
-		<p class="subtitle">Descubre cómo puedes crecer en tu fe y servir a la comunidad con nosotros</p>
-		<div class="feature-grid">
-			{features.map(feature => (
-				<div class="feature-card">
-					<div class="icon">{feature.icon}</div>
-					<h3>{feature.title}</h3>
-					<p>{feature.description}</p>
-				</div>
-			))}
-		</div>
-	</div>
+  <div class="container">
+    <h2>Nuestros Ministerios</h2>
+    <p class="subtitle">Descubre todos los ministerios de nuestra iglesia</p>
+    <div class="feature-grid">
+      {
+        features.map((feature) => (
+          <ImageFlip BackImage={feature.img} text={feature.title} />
+        ))
+      }
+    </div>
+  </div>
 </section>
 
 <style>
-	.features {
-		padding: 6rem 0;
-		background-color: #f8f8f8;
-	}
-	.container {
-		max-width: 1200px;
-		margin: 0 auto;
-		text-align: center;
-	}
-	h2 {
-		color: var(--color-primary);
-		font-size: 2.5rem;
-		margin-bottom: 1rem;
-	}
-	.subtitle {
-		font-size: 1.2rem;
-		color: #666;
-		margin-bottom: 3rem;
-	}
-	.feature-grid {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-		gap: 2rem;
-	}
-	.feature-card {
-		background-color: var(--color-background);
-		padding: 2rem;
-		border-radius: 10px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-		transition: transform 0.3s ease;
-	}
-	.feature-card:hover {
-		transform: translateY(-5px);
-	}
-	.icon {
-		font-size: 3rem;
-		margin-bottom: 1rem;
-	}
-	h3 {
-		color: var(--color-primary);
-		margin-bottom: 1rem;
-	}
+  .features {
+    padding: 6rem 0;
+    background-color: #f8f8f8;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  h2 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 3rem;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .feature-card {
+    background-color: var(--color-background);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .feature-card:hover {
+    transform: translateY(-5px);
+  }
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
 </style>
