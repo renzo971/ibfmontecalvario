@@ -1,0 +1,80 @@
+---
+import { Image } from "astro:assets";
+import pastor from "../images/pastor.jpg";
+---
+
+<section class="py-4 overflow-hidden bg-white sm:p-4 lg:h-screen items-center">
+  <div class="mx-auto max-w-7xl">
+    <div
+      class="grid max-w-2xl grid-cols-1 mx-auto gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 md:grid-cols-2 items-center"
+      id="secundaria"
+    >
+      <div class="lg:max-w-lg scale-up-center text-center p-8" id="pastor-text">
+        <h1
+          class="mt-2 text-4xl font-extrabold tracking-tight text-mc1 sm:text-5xl"
+        >
+          ¡Bienvenido!
+        </h1>
+        <p class="mt-6 text-lg leading-8 text-mc2">
+          Mucho gusto, soy <strong class="text-mc3">Artemio Galeote</strong>, el
+          pastor de la <strong class="text-mc3"
+            >Iglesia Bautista Fundamental Monte Calvario</strong
+          >. <br />Antes de todo, quisiera invitarte a que si aún no lo has
+          hecho,
+          <a href="/camino-al-cielo" class="text-mc3 font-bold hover:text-mc4">
+            aceptes a Cristo como tu Salvador
+          </a>. Es la decisión más importante que podrías tomar.
+        </p>
+        <p class="mt-6 text-lg leading-8 text-mc2">
+          Una vez hecho esto, te damos la bienvenida a nuestra página. Estamos
+          muy contentos de que estés aquí y esperamos que puedas conocer más
+          sobre nosotros. <br /> Si tienes alguna pregunta o te gustaría visitarnos,
+          por favor no dudes en ponerte en contacto.
+        </p>
+      </div>
+      <div class="lg:pr-8 lg:pt-4 scale-up-center" id="pastor-image">
+        <Image src={pastor} class="rounded-2xl" alt="Pastor Artemio Galeote" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .scale-up-center {
+    opacity: 0;
+    transform: scale(0.5);
+    transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  }
+
+  .scale-up-center.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @keyframes scale-up-center {
+    0% {
+      transform: scale(0.5);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+</style>
+
+<script>
+  // Detectar cuando el texto y la imagen están en el viewport
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  });
+
+  const targetText = document.getElementById("pastor-text");
+  const targetImage = document.getElementById("pastor-image");
+  observer.observe(targetText);
+  observer.observe(targetImage);
+</script>
