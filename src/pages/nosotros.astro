@@ -1,0 +1,39 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Nosotros - Iglesia Bautista Fundamental Monte Calvario">
+	<Header />
+	<main>
+		<section class="nosotros">
+			<div class="container">
+				<h1>Nosotros</h1>
+				<p>La Iglesia Bautista Fundamental Monte Calvario es una comunidad de fe comprometida con la enseñanza de la Palabra de Dios y el crecimiento espiritual de sus miembros.</p>
+				<p>Nuestra misión es compartir el amor de Cristo, fortalecer a las familias y servir a nuestra comunidad.</p>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.nosotros {
+		padding: 4rem 0;
+	}
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	h1 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+	}
+	p {
+		margin-bottom: 1rem;
+		line-height: 1.6;
+	}
+</style>

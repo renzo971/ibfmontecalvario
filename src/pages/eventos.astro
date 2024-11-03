@@ -1,0 +1,116 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const events = [
+	{
+		date: '2023-06-15',
+		time: '19:00',
+		title: 'Estudio Bíblico: El Libro de Romanos',
+		description: 'Únete a nuestro pastor para un estudio profundo del libro de Romanos.'
+	},
+	{
+		date: '2023-06-18',
+		time: '10:00',
+		title: 'Servicio Dominical Especial',
+		description: 'Celebración del aniversario de nuestra iglesia con invitados especiales.'
+	},
+	{
+		date: '2023-06-24',
+		time: '09:00',
+		title: 'Desayuno de Hombres',
+		description: 'Compañerismo y devocional para hombres de todas las edades.'
+	},
+	{
+		date: '2023-07-01',
+		time: '18:00',
+		title: 'Noche de Alabanza',
+		description: 'Una noche especial de adoración y alabanza con nuestro equipo de música.'
+	}
+];
+---
+
+<Layout title="Eventos - Iglesia Bautista Fundamental Monte Calvario">
+	<Header />
+	<main>
+		<section class="eventos">
+			<div class="container">
+				<h1>Próximos Eventos</h1>
+				<div class="events-list">
+					{events.map(event => (
+						<div class="event-card">
+							<div class="event-date">
+								<span class="day">{new Date(event.date).getDate()}</span>
+								<span class="month">{new Date(event.date).toLocaleString('es', { month: 'short' })}</span>
+							</div>
+							<div class="event-details">
+								<h3>{event.title}</h3>
+								<p class="event-time">{event.time}</p>
+								<p>{event.description}</p>
+							</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.eventos {
+		padding: 4rem 0;
+	}
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	h1 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.events-list {
+		display: flex;
+		flex-direction: column;
+		gap: 2rem;
+	}
+	.event-card {
+		display: flex;
+		background-color: #f8f8f8;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	.event-date {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-primary);
+		color: var(--color-background);
+		padding: 1rem;
+		min-width: 80px;
+	}
+	.event-date .day {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	.event-date .month {
+		text-transform: uppercase;
+	}
+	.event-details {
+		padding: 1rem;
+	}
+	.event-details h3 {
+		color: var(--color-primary);
+		margin-bottom: 0.5rem;
+	}
+	.event-time {
+		color: var(--color-secondary);
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+</style>

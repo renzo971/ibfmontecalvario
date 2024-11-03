@@ -3,7 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Card from "../components/Card.astro";
 import { Image } from "astro:assets";
 import logo from "../assets/iglesia.png";
-import Info from "./Info.astro";
+import Info from "../components/Info.astro";
 ---
 
 <Layout title="IBF-Monte Calvario">
@@ -36,14 +36,6 @@ import Info from "./Info.astro";
           Ubicación
         </a>
         <Info />
-      </div>
-
-      <div>
-        <p class="text-white text-sm">Web</p>
-        <a
-          href="https://www.iglesiabautistamontecalvario.com"
-          class="text-[#c7f9cc] text-lg">www.iglesiabautistamontecalvario.com</a
-        >
       </div>
     </div>
   </main>

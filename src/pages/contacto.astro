@@ -1,0 +1,73 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Contacto - Iglesia Bautista Fundamental Monte Calvario">
+	<Header />
+	<main>
+		<section class="contacto">
+			<div class="container">
+				<h1>Contacto</h1>
+				<div class="contact-info">
+					<p><strong>Dirección:</strong> Calle Principal 123, Ciudad</p>
+					<p><strong>Teléfono:</strong> (123) 456-7890</p>
+					<p><strong>Email:</strong> info@montecalvario.org</p>
+				</div>
+				<form class="contact-form">
+					<input type="text" name="name" placeholder="Nombre" required>
+					<input type="email" name="email" placeholder="Correo electrónico" required>
+					<textarea name="message" placeholder="Mensaje" required></textarea>
+					<button type="submit">Enviar mensaje</button>
+				</form>
+			</div>
+		</section>
+	</main>
+	<Footer />
+</Layout>
+
+<style>
+	.contacto {
+		padding: 4rem 0;
+	}
+	.container {
+		max-width: 800px;
+		margin: 0 auto;
+	}
+	h1 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: 2rem;
+		text-align: center;
+	}
+	.contact-info {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+	.contact-form {
+		display: flex;
+		flex-direction: column;
+		gap: 1rem;
+	}
+	input, textarea {
+		padding: 0.5rem;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+	}
+	textarea {
+		height: 150px;
+	}
+	button {
+		background-color: var(--color-primary);
+		color: var(--color-background);
+		padding: 0.5rem 1rem;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+		transition: background-color 0.3s ease;
+	}
+	button:hover {
+		background-color: var(--color-secondary);
+	}
+</style>

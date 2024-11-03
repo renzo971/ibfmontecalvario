@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import UpcomingEvents from "../components/UpcomingEvents.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Iglesia Bautista Fundamental Monte Calvario">
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <UpcomingEvents />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>

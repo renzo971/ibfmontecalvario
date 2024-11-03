@@ -1,0 +1,95 @@
+---
+import { Image } from "astro:assets";
+import logowhite from "../images/white.png";
+const currentYear = new Date().getFullYear();
+---
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <Image
+          src={logowhite}
+          alt="Iglesia Bautista Fundamental Monte Calvario"
+          class="logo"
+        />
+      </div>
+      <div class="footer-links">
+        <h4>Enlaces Rápidos</h4>
+        <ul>
+          <li><a href="/">Inicio</a></li>
+          <li><a href="/nosotros">Nosotros</a></li>
+          <li><a href="/servicios">Servicios</a></li>
+          <li><a href="/eventos">Eventos</a></li>
+          <li><a href="/camino-al-cielo">El Camino al Cielo</a></li>
+          <li><a href="/contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contáctanos</h4>
+        <a
+          href="https://www.google.com/maps/search/Jiron%20Sta.%20Mercedes%20169%2C%20Chorrillos%2015066%2C%20Per%C3%BA/@-12.1897192066999,-77.0094786956906,17z"
+          >Jiron Sta. Mercedes 169, Chorrillos 15066, Perú</a
+        >
+        <p>
+          Teléfono: <a target="_blank" href="tel:+51966600819"
+            >(51) 966-600-819</a
+          >
+        </p>
+        <p>
+          Email: <a href="mailto:artemisionperu@gmail.com"
+            >artemisionperu@gmail.com</a
+          >
+        </p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        &copy; {currentYear} Iglesia Bautista Fundamental Monte Calvario. Todos los
+        derechos reservados. Desarrollado por <a
+          href="mailto:orrego.stsantos@gmail.com">Renzo Santos</a
+        > con mucho ♥ para Dios y su iglesia.
+      </p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  footer {
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 4rem 0 2rem;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .footer-logo .logo {
+    width: 150px;
+    height: auto;
+  }
+  .footer-links ul {
+    list-style: none;
+    padding: 0;
+  }
+  .footer-links a {
+    color: var(--color-background);
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .footer-links a:hover {
+    color: var(--color-secondary);
+  }
+  .footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+  }
+</style>

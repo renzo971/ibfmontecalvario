@@ -1,0 +1,117 @@
+---
+const events = [
+	{
+		date: '2023-06-15',
+		time: '19:00',
+		title: 'Estudio Bíblico: El Libro de Romanos',
+		description: 'Únete a nuestro pastor para un estudio profundo del libro de Romanos.'
+	},
+	{
+		date: '2023-06-18',
+		time: '10:00',
+		title: 'Servicio Dominical Especial',
+		description: 'Celebración del aniversario de nuestra iglesia con invitados especiales.'
+	},
+	{
+		date: '2023-06-24',
+		time: '09:00',
+		title: 'Desayuno de Hombres',
+		description: 'Compañerismo y devocional para hombres de todas las edades.'
+	}
+];
+---
+<section class="upcoming-events">
+	<div class="container">
+		<h2>Próximos Eventos</h2>
+		<div class="events-grid">
+			{events.map(event => (
+				<div class="event-card">
+					<div class="event-date">
+						<span class="day">{new Date(event.date).getDate()}</span>
+						<span class="month">{new Date(event.date).toLocaleString('es', { month: 'short' })}</span>
+					</div>
+					<div class="event-details">
+						<h3>{event.title}</h3>
+						<p class="event-time">{event.time}</p>
+						<p>{event.description}</p>
+					</div>
+				</div>
+			))}
+		</div>
+		<a href="/eventos" class="view-all-button">Ver todos los eventos</a>
+	</div>
+</section>
+
+<style>
+	.upcoming-events {
+		padding: 6rem 0;
+		background-color: var(--color-background);
+	}
+	.container {
+		max-width: 1200px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	h2 {
+		color: var(--color-primary);
+		font-size: 2.5rem;
+		margin-bottom: 3rem;
+	}
+	.events-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+		gap: 2rem;
+		margin-bottom: 2rem;
+	}
+	.event-card {
+		display: flex;
+		background-color: #f8f8f8;
+		border-radius: 10px;
+		overflow: hidden;
+		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	}
+	.event-date {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background-color: var(--color-primary);
+		color: var(--color-background);
+		padding: 1rem;
+		min-width: 80px;
+	}
+	.event-date .day {
+		font-size: 1.5rem;
+		font-weight: bold;
+	}
+	.event-date .month {
+		text-transform: uppercase;
+	}
+	.event-details {
+		padding: 1rem;
+		text-align: left;
+	}
+	.event-details h3 {
+		color: var(--color-primary);
+		margin-bottom: 0.5rem;
+	}
+	.event-time {
+		color: var(--color-secondary);
+		font-weight: bold;
+		margin-bottom: 0.5rem;
+	}
+	.view-all-button {
+		display: inline-block;
+		background-color: var(--color-secondary);
+		color: var(--color-primary);
+		padding: 1rem 2rem;
+		border-radius: 5px;
+		text-decoration: none;
+		font-weight: bold;
+		transition: background-color 0.3s ease;
+	}
+	.view-all-button:hover {
+		background-color: var(--color-primary);
+		color: var(--color-background);
+	}
+</style>

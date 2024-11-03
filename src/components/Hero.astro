@@ -1,0 +1,84 @@
+---
+import ImageFlip from "./ImageFlip.astro";
+import comidaImage from "../images/comida.jpg";
+---
+
+<section class="hero h-[90vh]">
+  <div class="container">
+    <h1>Bienvenidos a la iglesia bautista Monte Calvario</h1>
+    <p>Un lugar de fe, esperanza y amor por las almas</p>
+
+    <div class="cta-buttons">
+      <a href="/servicios" class="cta-button primary">Nuestros Servicios</a>
+      <a href="/eventos" class="cta-button secondary">Próximos Eventos</a>
+    </div>
+    <ImageFlip BackImage={comidaImage} text="Hola soy yo" />
+  </div>
+</section>
+
+<style>
+  .rotate-horizontal-center {
+    animation: rotate-horizontal-center 0.4s;
+  }
+  @keyframes rotate-horizontal-center {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(-360deg);
+    }
+  }
+  .hero {
+    background-image: linear-gradient(
+        rgba(2, 48, 96),
+        rgba(50, 111, 177, 0.8),
+        rgba(0, 32, 91, 0.8)
+      ),
+      url("../images/iglesiacompleta.jpg");
+    background-size: cover;
+    background-position: center;
+    color: var(--color-background);
+    text-align: center;
+    padding: 10rem 0;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  }
+  .cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+  }
+  .cta-button.primary {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+  .cta-button.secondary {
+    background-color: transparent;
+    color: var(--color-background);
+    border: 2px solid var(--color-background);
+  }
+  .cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>
