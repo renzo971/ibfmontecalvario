@@ -9,9 +9,9 @@ interface Props {
 const { BackImage, text } = Astro.props;
 ---
 
-<div class="relative group w-64 h-64">
+<div class="relative group w-auto h-auto items-center">
   <!-- Imagen usando la etiqueta <Image> de Astro -->
-  <Image src={BackImage} alt="Comida" class="w-full h-full object-cover" />
+  <Image src={BackImage} alt="Comida" class="w-auto h-auto object-cover" />
 
   <!-- Texto oculto que aparece al hacer hover -->
   <div
