@@ -21,8 +21,20 @@ console.log(currentPath);
     >
       <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
         <!-- Ajusta el tamaño del logo aquí -->
-        <Image src={logopuro} class="w-20 h-auto" alt="Iglesia Logo" />
-        <Image src={logoname} class="h-10 w-auto" alt="Iglesia name" />
+        <Image
+          src={logopuro}
+          width={100}
+          height={50}
+          alt="Iglesia Logo"
+          client:load
+        />
+        <Image
+          src={logoname}
+          height={50}
+          width={300}
+          alt="Iglesia name"
+          client:load
+        />
       </a>
       <button
         data-collapse-toggle="navbar-default"
