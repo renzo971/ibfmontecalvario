@@ -1,16 +1,15 @@
 ---
-import ImageFlip from "./ImageFlip.astro";
-import comidaImage from "../images/comida.jpg";
+
 ---
 
-<section class="hero">
+<section class="hero min-h-[90vh]">
   <div class="container">
     <h1>Bienvenidos a la iglesia bautista Monte Calvario</h1>
     <p>Un lugar de fe, esperanza y amor por las almas</p>
 
-    <div class="cta-buttons">
-      <a href="/servicios" class="cta-button primary">Nuestros Servicios</a>
-      <a href="/eventos" class="cta-button secondary">Próximos Eventos</a>
+    <div class="flex justify-center gap-4">
+      <a href="/servicios" class="inline-block px-8 py-4 rounded-md no-underline font-bold transition ease-in-out delay-75 hover:-translate-y-1  bg-mc3 text-mc2 hover:shadow-md">Nuestros Servicios</a>
+      <a href="/eventos" class="inline-block px-8 py-4 rounded-md no-underline font-bold transition ease-in-out delay-75 hover:-translate-y-1  bg-transparent text-white ring-offset-2 ring-2  hover:shadow-md">Próximos Eventos</a>
     </div>
   </div>
 </section>
@@ -47,35 +46,17 @@ import comidaImage from "../images/comida.jpg";
   h1 {
     font-size: 3.5rem;
     margin-bottom: 1rem;
+    color: white;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   }
   p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
+    color:white;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
   }
-  .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .cta-button {
-    display: inline-block;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all 0.3s ease;
-  }
-  .cta-button.primary {
-    background-color: var(--color-secondary);
-    color: var(--color-primary);
-  }
-  .cta-button.secondary {
-    background-color: transparent;
-    color: var(--color-background);
-    border: 2px solid var(--color-background);
-  }
+
+ 
   .cta-button:hover {
     transform: translateY(-3px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);

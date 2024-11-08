@@ -11,7 +11,7 @@ const { BackImage, text } = Astro.props;
 
 <div class="relative group w-auto h-auto items-center">
   <!-- Imagen usando la etiqueta <Image> de Astro -->
-  <Image src={BackImage} alt="Comida" class="w-auto h-auto object-cover" />
+  <Image src={BackImage} alt="Comida" class="w-auto h-30 object-cover"     loading="lazy" />
 
   <!-- Texto oculto que aparece al hacer hover -->
   <div
@@ -20,3 +20,9 @@ const { BackImage, text } = Astro.props;
     <p class="text-lg font-bold">{text}</p>
   </div>
 </div>
+<style>
+  img[loading] {
+    /* Estilos para la imagen mientras carga */
+    background-color: #f0f0f0; /* Color de fondo placeholder */
+  }
+</style>
