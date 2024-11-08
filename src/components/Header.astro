@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import logopuro from "../images/logopuro.png";
-import logoname from "../images/logoname.png";
+import logoname from "../images/logoname.png";const currentPath = Astro.url.pathname;
 const pages = [
   { url: "/", title: "Inicio" },
   { url: "/nosotros", title: "Nosotros" },
@@ -10,8 +10,7 @@ const pages = [
   { url: "/camino-al-cielo", title: "El Camino al Cielo" },
   { url: "/contacto", title: "Contacto" },
 ];
-const currentPath = Astro.url.pathname;
-console.log(currentPath);
+
 ---
 
 <header>
@@ -64,14 +63,14 @@ console.log(currentPath);
           class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-[#023060] md:dark:bg-[#023060] dark:border-gray-700"
         >
           {
-            pages.map((page, index) => (
+            pages.map((page) => (
               <li>
                 <a
                   href={page.url}
                   class={
                     currentPath === page.url
-                      ? "block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500"
-                      : "block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent"
+                    ? "block py-2 px-3  rounded  md:p-0 text-mc3"
+                      : "block py-2 px-3 text-white rounded hover:text-mc3 md:border-0  md:p-0   hover:bg-transparent"
                   }
                   aria-current={currentPath === page.url ? "page" : undefined}
                 >
