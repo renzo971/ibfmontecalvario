@@ -1,16 +1,16 @@
 ---
 import { Image } from "astro:assets";
 import logopuro from "../images/logopuro.png";
-import logoname from "../images/logoname.png";const currentPath = Astro.url.pathname;
+import logoname from "../images/logoname.png";
+const currentPath = Astro.url.pathname;
 const pages = [
-  { url: "/", title: "Inicio" },
+  { url: "/index2", title: "Inicio" },
   { url: "/nosotros", title: "Nosotros" },
   { url: "/servicios", title: "Servicios" },
   { url: "/eventos", title: "Eventos" },
   { url: "/camino-al-cielo", title: "El Camino al Cielo" },
   { url: "/contacto", title: "Contacto" },
 ];
-
 ---
 
 <header>
@@ -69,7 +69,7 @@ const pages = [
                   href={page.url}
                   class={
                     currentPath === page.url
-                    ? "block py-2 px-3  rounded  md:p-0 text-mc3"
+                      ? "block py-2 px-3  rounded  md:p-0 text-mc3"
                       : "block py-2 px-3 text-white rounded hover:text-mc3 md:border-0  md:p-0   hover:bg-transparent"
                   }
                   aria-current={currentPath === page.url ? "page" : undefined}
