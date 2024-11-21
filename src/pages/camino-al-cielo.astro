@@ -1,106 +1,128 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import Layout from "../layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 ---
 
-<Layout title="El Camino al Cielo - Iglesia Bautista Fundamental Monte Calvario">
-	<Header />
-	<main>
-		<section class="camino-al-cielo">
-			<div class="container">
-				<h1>El Camino al Cielo</h1>
-				<div class="plan-salvacion">
-					<ol>
-						<li>
-							<h3>Reconoce que eres pecador</h3>
-							<p>"Por cuanto todos pecaron y están destituidos de la gloria de Dios." (Romanos 3:23)</p>
-						</li>
-						<li>
-							<h3>Comprende que el pecado tiene consecuencias</h3>
-							<p>"Porque la paga del pecado es muerte, mas la dádiva de Dios es vida eterna en Cristo Jesús Señor nuestro." (Romanos 6:23)</p>
-						</li>
-						<li>
-							<h3>Cree que Jesús murió por tus pecados</h3>
-							<p>"Mas Dios muestra su amor para con nosotros, en que siendo aún pecadores, Cristo murió por nosotros." (Romanos 5:8)</p>
-						</li>
-						<li>
-							<h3>Arrepiéntete de tus pecados</h3>
-							<p>"Arrepentíos, y bautícese cada uno de vosotros en el nombre de Jesucristo para perdón de los pecados." (Hechos 2:38)</p>
-						</li>
-						<li>
-							<h3>Acepta a Jesús como tu Salvador personal</h3>
-							<p>"Que si confesares con tu boca que Jesús es el Señor, y creyeres en tu corazón que Dios le levantó de los muertos, serás salvo." (Romanos 10:9)</p>
-						</li>
-					</ol>
-					<div class="cta">
-						<p>Si deseas saber más sobre cómo recibir a Cristo y comenzar una nueva vida, te invitamos a hablar con uno de nuestros pastores o líderes.</p>
-						<a href="/contacto" class="cta-button">Contáctanos</a>
-					</div>
-				</div>
-			</div>
-		</section>
-	</main>
-	<Footer />
+<Layout
+  title="El Camino al Cielo - Iglesia Bautista Fundamental Monte Calvario"
+>
+  <Header />
+  <main>
+    <section class="camino-al-cielo">
+      <div class="container">
+        <h1>El Camino al Cielo</h1>
+        <div class="plan-salvacion">
+          <ol>
+            <li>
+              <h3>Reconoce que eres pecador</h3>
+              <p>
+                "Por cuanto todos pecaron y están destituidos de la gloria de
+                Dios." (Romanos 3:23)
+              </p>
+            </li>
+            <li>
+              <h3>Comprende que el pecado tiene consecuencias</h3>
+              <p>
+                "Porque la paga del pecado es muerte, mas la dádiva de Dios es
+                vida eterna en Cristo Jesús Señor nuestro." (Romanos 6:23)
+              </p>
+            </li>
+            <li>
+              <h3>Cree que Jesús murió por tus pecados</h3>
+              <p>
+                "Mas Dios muestra su amor para con nosotros, en que siendo aún
+                pecadores, Cristo murió por nosotros." (Romanos 5:8)
+              </p>
+            </li>
+            <li>
+              <h3>Arrepiéntete de tus pecados</h3>
+              <p>
+                "Arrepentíos, y bautícese cada uno de vosotros en el nombre de
+                Jesucristo para perdón de los pecados." (Hechos 2:38)
+              </p>
+            </li>
+            <li>
+              <h3>Acepta a Jesús como tu Salvador personal</h3>
+              <p>
+                "Que si confesares con tu boca que Jesús es el Señor, y creyeres
+                en tu corazón que Dios le levantó de los muertos, serás salvo."
+                (Romanos 10:9)
+              </p>
+            </li>
+          </ol>
+          <div class="cta">
+            <p>
+              Si deseas saber más sobre cómo recibir a Cristo y comenzar una
+              nueva vida, te invitamos a hablar con uno de nuestros pastores o
+              líderes.
+            </p>
+            <a href="/contacto" class="cta-button">Contáctanos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
 </Layout>
 
 <style>
-	.camino-al-cielo {
-		padding: 4rem 0;
-		background-color: #f8f8f8;
-	}
-	.container {
-		max-width: 800px;
-		margin: 0 auto;
-	}
-	h1 {
-		color: var(--color-primary);
-		font-size: 2.5rem;
-		margin-bottom: 2rem;
-		text-align: center;
-	}
-	h2 {
-		color: var(--color-secondary);
-		font-size: 2rem;
-		margin-bottom: 1.5rem;
-		text-align: center;
-	}
-	.plan-salvacion {
-		background-color: white;
-		padding: 2rem;
-		border-radius: 10px;
-		box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	}
-	ol {
-		padding-left: 1.5rem;
-	}
-	li {
-		margin-bottom: 1.5rem;
-	}
-	h3 {
-		color: var(--color-primary);
-		margin-bottom: 0.5rem;
-	}
-	p {
-		margin-bottom: 0.5rem;
-		line-height: 1.6;
-	}
-	.cta {
-		margin-top: 2rem;
-		text-align: center;
-	}
-	.cta-button {
-		display: inline-block;
-		background-color: var(--color-primary);
-		color: var(--color-background);
-		padding: 0.5rem 1rem;
-		border-radius: 5px;
-		text-decoration: none;
-		font-weight: bold;
-		margin-top: 1rem;
-		transition: background-color 0.3s ease;
-	}
-	.cta-button:hover {
-		background-color: var(--color-secondary);
-	}
+  .camino-al-cielo {
+    padding: 4rem 0;
+    background-color: #f8f8f8;
+  }
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  h1 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  h2 {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .plan-salvacion {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  ol {
+    padding-left: 1.5rem;
+  }
+  li {
+    margin-bottom: 1.5rem;
+  }
+  h3 {
+    color: var(--color-primary);
+    margin-bottom: 0.5rem;
+  }
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+  }
+  .cta {
+    margin-top: 2rem;
+    text-align: center;
+  }
+  .cta-button {
+    display: inline-block;
+    background-color: var(--color-primary);
+    color: var(--color-background);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover {
+    background-color: var(--color-secondary);
+  }
 </style>

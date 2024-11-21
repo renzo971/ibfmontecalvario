@@ -1,144 +1,157 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
 import { Image } from "astro:assets";
-import iglesia2 from "../images/iglesia2.jpg";
-import iglesia3 from "../images/iglesia3.jpg";
+import local1 from "@/images/iglesia/local1.jpg";
+import local3 from "@/images/iglesia/local3.jpg";
+import costa from "@/images/iglesia/costa.jpg";
+import jovenes from "@/images/iglesia/jovenes.jpg";
+import jovenes2 from "@/images/iglesia/jovenes2.jpg";
+import jovenes3 from "@/images/iglesia/jovenes3.jpg";
+import ga from "@/images/iglesia/ganandoalmas.jpg";
+import bannerImage from "@/images/iglesia/pastor.jpg"; // Añadir la imagen del banner
 ---
 
 <Layout title="Nosotros - Iglesia Bautista Fundamental Monte Calvario">
   <Header />
   <main>
-    <section class="container mx-auto py-8">
-      <h1 class="text-center font-bold text-5xl mb-12 text-mc1">
-        Nuestra historia
-      </h1>
+    <!-- Sección 1: Fundación con degradado de mc2 a mc1 -->
+    <section
+      class="mx-auto pt-12 pb-4 text-center bg-gradient-to-b from-mc2 via-mc3 to-mc1 items-center"
+    >
+      <div class="container mx-auto">
+        <h1 class="font-bold text-6xl mb-12 text-white">Fundación</h1>
 
-      <!-- Bloque 1: Imagen a la izquierda, texto a la derecha en desktop -->
+        <!-- Bloque 1: Fundación - Texto centrado -->
+        <div class="mb-16">
+          <p class="text-lg mx-auto max-w-3xl text-white">
+            <strong>Nuestra historia comenzó el 4 de mayo de 2014</strong>,
+            cuando el misionero Artemio Galeote fundó la Iglesia Bautista
+            Fundamental Monte Calvario. Desde aquel día, hemos experimentado un
+            crecimiento constante, <strong>ganando almas para Cristo</strong> y viendo
+            cómo nuestra comunidad se expande. Nuestro primer culto fue una bendición,
+            con más de 21 invitados que se unieron a nosotros. <strong
+              >¡Desde entonces, nuestra misión de llevar el Evangelio a cada
+              rincón del mundo no se ha detenido!</strong
+            >
+          </p>
+        </div>
+
+        <!-- Galería de imágenes bajo la Fundación -->
+        <div class="m-4 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Image
+            src={local3}
+            class="rounded-lg shadow-lg scale-up-center"
+            alt="Primeros servicios"
+            loading="lazy"
+          />
+          <Image
+            src={costa}
+            class="rounded-lg shadow-lg"
+            alt="Primer local"
+            loading="lazy"
+          />
+          <Image
+            src={jovenes}
+            class="rounded-lg shadow-lg"
+            alt="Primeros eventos"
+            loading="lazy"
+          />
+          <Image
+            src={jovenes2}
+            class="rounded-lg shadow-lg"
+            alt="Reuniones iniciales"
+            loading="lazy"
+          />
+        </div>
+
+        <!-- Foto tipo banner debajo de la galería -->
+        <div class="grid w-full mb-4 mx-auto items-center">
+          <Image
+            src={bannerImage}
+            class="w-full rounded-lg shadow-lg"
+            alt="Banner de la Iglesia"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección 2: Historia con fondo blanco -->
+    <section class="bg-white">
       <div
-        class="relative flex flex-col md:flex-row items-center md:mb-16 lg:bg-gradient-to-r lg:border lg:border-gray-200 lg:rounded-lg lg:shadow md:bg-gradient-to-r from-mc2 via-mc3 to-mc1 md:border md:border-gray-200 md:rounded-lg md:shadow"
+        class="relative flex flex-col md:flex-row items-center container mx-auto"
       >
         <Image
-          src={iglesia2}
-          class="w-full md:w-1/2 rounded-none md:rounded-lg shadow-none md:shadow-lg"
+          src={ga}
+          class="w-full md:w-1/2 rounded-lg shadow-lg"
           alt="Pastor Artemio Galeote"
           loading="lazy"
         />
-        <div
-          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white p-4 md:static md:bg-transparent -black md:p-8"
-        >
-          <p class="text-lg">
-            La Iglesia Bautista Fundamental Monte Calvario fue fundada en 2014
-            por el misionero Artemio Galeote. La iglesia comenzó con reuniones
-            en una casa en el distrito de San Juan de Miraflores (SJM), y
-            rápidamente empezó a crecer en número. Lo que inicialmente fue un
-            pequeño grupo de creyentes, pronto se convirtió en en un grupo de 40
-            miembros fieles.
+        <div class="md:w-1/2 p-8 text-left">
+          <h1 class="mb-4 text-mc3 font-black text-5xl">Ganadores de Almas</h1>
+          <p class="text-lg text-mc2">
+            ¡Cada sábado, nuestros 6 equipos de ganadores de almas salen a las
+            calles para llevar el evangelio! Con rutas estratégicas en cada
+            zona, recogemos a nuestros hermanos los días domingos y juntos nos
+            dirigimos a la iglesia para aprender más de la palabra de Dios.
           </p>
         </div>
       </div>
+    </section>
 
-      <!-- Bloque 2: Imagen a la derecha, texto a la izquierda en desktop -->
+    <!-- Sección 3: Jóvenes con degradado de mc2 a mc1 -->
+    <section class="text-center bg-gradient-to-b from-mc2 via-mc3 to-mc1">
       <div
-        class="relative flex flex-col md:flex-row-reverse items-center md:mb-16 lg:bg-gradient-to-r lg:border lg:border-gray-200 lg:rounded-lg lg:shadow md:bg-gradient-to-r from-mc2 via-mc3 to-mc1 md:border md:border-gray-200 md:rounded-lg md:shadow"
+        class="relative flex flex-col md:flex-row-reverse items-center container mx-auto"
       >
         <Image
-          src={iglesia2}
-          class="w-full md:w-1/2 rounded-none md:rounded-lg shadow-none md:shadow-lg"
+          src={jovenes3}
+          class="w-full md:w-1/2 rounded-lg shadow-lg"
           alt="Mudanza a Chorrillos"
-          client:load
         />
-        <div
-          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white p-4 md:static md:bg-transparent md:p-8"
-        >
+        <div class="md:w-1/2 p-8 text-left text-white">
+          <h2 class="text-5xl font-black mb-4">Jóvenes</h2>
           <p class="text-lg">
-            En 2017, la iglesia se trasladó al distrito de Chorrillos, lo que
-            marcó el inicio de una nueva etapa. En ese periodo, se formaron
-            cinco rutas la primera de ellas fue la de pescadores y en total han
-            alcanzado a muchas personas, ayudándolas a encontrar su camino hacia
-            la salvación.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bloque 3: Imagen a la izquierda, texto a la derecha en desktop -->
-      <div
-        class="relative flex flex-col md:flex-row items-center md:mb-16 lg:bg-gradient-to-r lg:border lg:border-gray-200 lg:rounded-lg lg:shadow md:bg-gradient-to-r from-mc2 via-mc3 to-mc1 md:border md:border-gray-200 md:rounded-lg md:shadow"
-      >
-        <Image
-          src={iglesia3}
-          class="w-full md:w-1/2 rounded-none md:rounded-lg shadow-none md:shadow-lg"
-          alt="Nueva sede"
-          client:load
-        />
-        <div
-          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white p-4 md:static md:bg-transparent md:p-8"
-        >
-          <p class="text-lg">
-            Por la gracia de Dios, en 2022, la iglesia pudo adquirir un nuevo
-            local, mucho más amplio. Este espacio permitió a la congregación
-            celebrar grandes eventos, llenos de gente salva, enseñanzas
-            bíblicass.
-          </p>
-        </div>
-      </div>
-
-      <!-- Bloque 4: Imagen a la derecha, texto a la izquierda en desktop -->
-      <div
-        class="relative flex flex-col md:flex-row-reverse items-center lg:bg-gradient-to-r lg:border lg:border-gray-200 lg:rounded-lg lg:shadow md:bg-gradient-to-r from-mc2 via-mc3 to-mc1 md:border md:border-gray-200 md:rounded-lg md:shadow"
-      >
-        <Image
-          src={iglesia2}
-          class="w-full md:w-1/2 rounded-none md:rounded-lg shadow-none md:shadow-lg"
-          alt="Desafíos recientes"
-          client:load
-        />
-        <div
-          class="absolute inset-0 flex items-center justify-center bg-black bg-opacity-70 text-white p-4 md:static md:bg-transparent md:p-8"
-        >
-          <p class="text-lg">
-            A pesar de que el contrato para este local llegó a su fin, la
-            Iglesia Bautista Fundamental Monte Calvario sigue firme en su
-            misión. El lema de la iglesia, "La Iglesia sigue caminando", refleja
-            su determinación para seguir creciendo y alcanzando más almas, sin
-            importar los desafíos que enfrenten.
+            ¡Nuestro grupo de jóvenes ha crecido exponencialmente! Con reuniones
+            que superan los 70 asistentes, hemos sido testigos de cómo una
+            pequeña semilla se ha convertido en un frondoso árbol. Lo más
+            emocionante es ver cómo estos jóvenes comparten nuestra pasión por
+            alcanzar almas y se han convertido en el motor que impulsa nuestra
+            iglesia hacia el futuro.
           </p>
         </div>
       </div>
     </section>
   </main>
+  <Footer />
 </Layout>
-<Footer />
+
 <style>
   img[loading] {
-    /* Estilos para la imagen mientras carga */
-    background-color: #f0f0f0; /* Color de fondo placeholder */
+    background-color: #f0f0f0;
   }
-  .card-shadow {
-    background-color: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  .grid img {
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
   }
 
-  .card-shadow:hover {
+  .grid img:hover {
+    transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    transform: translateY(-5px);
-  }
-
-  .card-text {
-    background: rgba(0, 0, 0, 0.6);
-    padding: 20px;
-    border-radius: 10px;
   }
 
   @media (min-width: 768px) {
     .card-text {
       background: transparent;
     }
+  }
+  .scale-up-center {
+    -webkit-animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1)
+      both;
+    animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
   }
 </style>

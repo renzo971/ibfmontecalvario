@@ -2,22 +2,171 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Card from "../components/Card.astro";
 ---
 
 <Layout title="Servicios - Iglesia Bautista Fundamental Monte Calvario">
   <Header />
   <main>
-    <section class="py-16">
-      <div class="max-w-4xl-md m-0 text-center">
-        <h1 class="list-none p-0">Nuestros Servicios</h1>
-        <ul class="list-none p-0">
-          <li class="mb-4 text-xl">Servicio Dominical: Domingos 10:00 AM</li>
-          <li class="mb-4 text-xl">Escuela Dominical: Domingos 9:00 AM</li>
-          <li class="mb-4 text-xl">Estudio Bíblico: Miércoles 7:00 PM</li>
-          <li class="mb-4 text-xl">Reunión de Jóvenes: Viernes 7:00 PM</li>
-        </ul>
+    <section class="mx-8 py-16">
+      <div
+        class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4 items-center"
+      >
+        <div>
+          <h1 class="text-mc3 font-bold text-5xl mb-7">BIENVENIDOS</h1>
+          <p class="text-mc1 font-medium mb-7">
+            Queremos darle una cordial invitación a los servicios de la Iglesia
+            Bautista fundamental Monte Calvario, una iglesia Bautista
+            Independiente centrada en la enseñanza y predicación de la Palabra
+            de Dios. Venga y visítenos durante uno de nuestros servicios, usted
+            va a descubrir que la música y la enseñanza práctica de la Biblia
+            cambiaran su vida.
+          </p>
+
+          <div class="grid lg:grid-cols-2 md:grid-cols-1 sm:grid-cols-1 gap-4">
+            <div class="text-left">
+              <h3 class="font-extrabold text-3xl text-mc3 pb-3">HORARIO</h3>
+              <h4 class="font-extrabold text-lg text-mc3 py-3">DOMINGOS</h4>
+
+              <ul>
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg>10:00 am - Culto General
+                </li>
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg>6:30 pm - Culto Noche
+                </li>
+              </ul>
+              <h4 class="font-extrabold text-lg text-mc3 py-3">ENTRE SEMANA</h4>
+              <ul>
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg> Miércoles 7: 00 pm Culto noche
+                </li>
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg> Sábado 4:00 pm Reunión de Jovenes
+                </li>
+              </ul>
+              <h4 class="font-extrabold text-lg text-mc3 py-3">GANAR ALMAS</h4>
+              <ul>
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg>Martes 6:00 pm
+                </li><br />
+                <li class="font-bold inline-flex">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    fill="currentColor"
+                    class="bi bi-clock mr-2 font-bold"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      d="M8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71z"
+                    ></path>
+                    <path
+                      d="M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m7-8A7 7 0 1 1 1 8a7 7 0 0 1 14 0"
+                    ></path>
+                  </svg>Sábado 10:00 am
+                </li>
+              </ul>
+            </div>
+            <div class="text-mc3 text-2xl font-bold">
+              Jiron Sta. Mercedes 183, Chorrillos 15066, Perú
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.8619799526423!2d-77.00952339999999!3d-12.189793199999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105b9d8bc53874b%3A0x7ffc2bd3074530f8!2sCalle%20Sta%20Mercedes%20183%2C%20Lima%2015067!5e0!3m2!1ses-419!2spe!4v1732164357581!5m2!1ses-419!2spe"
+                class="w-full h-4/5"
+                style="border:0;"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        <div>
+          <Card
+            body="Somos una Iglesia con un fuerte énfasis en predicar y enseñar la sana Doctrina de la Palabra de Dios."
+            title="PREDICACIÓN BÍBLICA"
+          />
+          <Card
+            body="Somos una Iglesia que busca predicar el evangelio a cada persona de la comunidad y apoyar la evangelización global."
+            title="GANAR ALMAS"
+          />
+          <Card
+            body="Somos una Iglesia que ayuda a los nuevos creyentes al enseñarles para que crezcan en su fe."
+            title="DISCIPULADO"
+          />
+        </div>
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>
+<Footer />
