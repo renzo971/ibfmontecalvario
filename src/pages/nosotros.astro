@@ -3,14 +3,14 @@ import Layout from "../layouts/Layout.astro";
 import Header from "@/components/Header.astro";
 import Footer from "@/components/Footer.astro";
 import { Image } from "astro:assets";
-import local1 from "@/images/iglesia/local1.jpg";
-import local3 from "@/images/iglesia/local3.jpg";
-import costa from "@/images/iglesia/costa.jpg";
-import jovenes from "@/images/iglesia/jovenes.jpg";
-import jovenes2 from "@/images/iglesia/jovenes2.jpg";
-import jovenes3 from "@/images/iglesia/jovenes3.jpg";
-import ga from "@/images/iglesia/ganandoalmas.jpg";
-import bannerImage from "@/images/iglesia/pastor.jpg"; // Añadir la imagen del banner
+import local3 from "@/images/iglesia/local3.webp";
+import costa from "@/images/iglesia/costa.webp";
+import jovenes from "@/images/iglesia/jovenes.webp";
+import jovenes2 from "@/images/iglesia/jovenes2.webp";
+import jovenes3 from "@/images/iglesia/jovenes3.webp";
+import ga from "@/images/iglesia/ganandoalmas.webp";
+import bannerImage from "@/images/iglesia/iglesiacompleta.webp";
+import { slide } from "astro:transitions";
 ---
 
 <Layout title="Nosotros - Iglesia Bautista Fundamental Monte Calvario">
@@ -45,24 +45,28 @@ import bannerImage from "@/images/iglesia/pastor.jpg"; // Añadir la imagen del 
             class="rounded-lg shadow-lg scale-up-center"
             alt="Primeros servicios"
             loading="lazy"
+            transition:animate={slide({ duration: "1s" })}
           />
           <Image
             src={costa}
             class="rounded-lg shadow-lg"
             alt="Primer local"
             loading="lazy"
+            transition:animate={slide({ duration: "0.8s" })}
           />
           <Image
             src={jovenes}
             class="rounded-lg shadow-lg"
             alt="Primeros eventos"
             loading="lazy"
+            transition:animate={slide({ duration: "0.6s" })}
           />
           <Image
             src={jovenes2}
             class="rounded-lg shadow-lg"
             alt="Reuniones iniciales"
             loading="lazy"
+            transition:animate={slide({ duration: "0.4s" })}
           />
         </div>
 

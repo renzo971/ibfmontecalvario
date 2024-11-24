@@ -3,7 +3,7 @@
 ---
 
 <section class="hero min-h-[90vh]">
-  <div class="container">
+  <div class="container" transition:animate="slide">
     <h1>Bienvenidos a la iglesia bautista Monte Calvario</h1>
     <p>Un lugar de fe, esperanza y amor por las almas</p>
 
@@ -23,17 +23,6 @@
 </section>
 
 <style>
-  .rotate-horizontal-center {
-    animation: rotate-horizontal-center 0.4s;
-  }
-  @keyframes rotate-horizontal-center {
-    0% {
-      transform: rotateX(0);
-    }
-    100% {
-      transform: rotateX(-360deg);
-    }
-  }
   .hero {
     background-image: linear-gradient(
         rgba(2, 48, 96),

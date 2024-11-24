@@ -49,41 +49,42 @@ import pastfamily from "../images/familia.jpg";
     /* Estilos para la imagen mientras carga */
     background-color: #f0f0f0; /* Color de fondo placeholder */
   }
+
   .scale-up-center {
     opacity: 0;
-    transform: scale(0.5);
-    transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+    transform: scale(0.9);
+    transition:
+      transform 0.6s ease-out,
+      opacity 0.6s ease-out;
   }
 
   .scale-up-center.show {
     opacity: 1;
     transform: scale(1);
   }
-
-  @keyframes scale-up-center {
-    0% {
-      transform: scale(0.5);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
 </style>
 
 <script>
-  // Detectar cuando el texto y la imagen están en el viewport
-  const observer = new IntersectionObserver((entries) => {
+  // Detectar cuando el texto y la imagen están en el viewport y aplicar animación
+  const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("show");
-      } else {
-        entry.target.classList.remove("show");
+        observer.unobserve(entry.target); // Dejar de observar después de animar
       }
     });
   });
 
-  const targetText = document.getElementById("pastor-text");
-  const targetImage = document.getElementById("pastor-image");
-  observer.observe(targetText);
-  observer.observe(targetImage);
+  function observeElements() {
+    const targetText = document.getElementById("pastor-text");
+    const targetImage = document.getElementById("pastor-image");
+    observer.observe(targetText);
+    observer.observe(targetImage);
+  }
+
+  // Ejecuta al cargar la página
+  document.addEventListener("DOMContentLoaded", observeElements);
+
+  // Ejecuta después de una transición de ViewTransition
+  document.addEventListener("astro:after-swap", observeElements);
 </script>

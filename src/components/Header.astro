@@ -72,16 +72,24 @@ const pages = [
   </nav>
 </header>
 
+<!-- Script para el cliente, que también escucha transiciones -->
 <script>
-  // Detectar cuando el botón de menú es clickeado para abrir/cerrar el menú
-  const menuToggle = document.querySelector("[data-collapse-toggle]");
-  const navbar = document.getElementById("navbar-default");
+  function setupNavbarToggle() {
+    const menuToggle = document.querySelector("[data-collapse-toggle]");
+    const navbar = document.getElementById("navbar-default");
 
-  if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-      const expanded = menuToggle.getAttribute("aria-expanded") === "true";
-      menuToggle.setAttribute("aria-expanded", (!expanded).toString());
-      navbar.classList.toggle("hidden");
-    });
+    if (menuToggle) {
+      menuToggle.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", (!expanded).toString());
+        navbar.classList.toggle("hidden");
+      });
+    }
   }
+
+  // Ejecuta al cargar la página
+  document.addEventListener("DOMContentLoaded", setupNavbarToggle);
+
+  // Ejecuta después de una transición de página
+  document.addEventListener("astro:after-swap", setupNavbarToggle);
 </script>
