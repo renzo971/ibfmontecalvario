@@ -17,9 +17,7 @@ import { slide } from "astro:transitions";
   <Header />
   <main>
     <!-- Sección 1: Fundación con degradado de mc2 a mc1 -->
-    <section
-      class="mx-auto pt-12 pb-4 text-center bg-gradient-to-b from-mc2 via-mc3 to-mc1 items-center"
-    >
+    <section class="mx-auto pt-12 pb-4 text-center items-center">
       <div class="container mx-auto">
         <h1 class="font-bold text-6xl mb-12 text-white">Fundación</h1>
 
@@ -44,28 +42,28 @@ import { slide } from "astro:transitions";
             src={local3}
             class="rounded-lg shadow-lg scale-up-center"
             alt="Primeros servicios"
-            loading="lazy"
+            loading="eager"
             transition:animate={slide({ duration: "1s" })}
           />
           <Image
             src={costa}
             class="rounded-lg shadow-lg"
             alt="Primer local"
-            loading="lazy"
+            loading="eager"
             transition:animate={slide({ duration: "0.8s" })}
           />
           <Image
             src={jovenes}
             class="rounded-lg shadow-lg"
             alt="Primeros eventos"
-            loading="lazy"
+            loading="eager"
             transition:animate={slide({ duration: "0.6s" })}
           />
           <Image
             src={jovenes2}
             class="rounded-lg shadow-lg"
             alt="Reuniones iniciales"
-            loading="lazy"
+            loading="eager"
             transition:animate={slide({ duration: "0.4s" })}
           />
         </div>
@@ -83,7 +81,7 @@ import { slide } from "astro:transitions";
     </section>
 
     <!-- Sección 2: Historia con fondo blanco -->
-    <section class="bg-white">
+    <section>
       <div
         class="relative flex flex-col md:flex-row items-center container mx-auto"
       >
@@ -95,7 +93,7 @@ import { slide } from "astro:transitions";
         />
         <div class="md:w-1/2 p-8 text-left">
           <h1 class="mb-4 text-mc3 font-black text-5xl">Ganadores de Almas</h1>
-          <p class="text-lg text-mc2">
+          <p class="text-lg text-white">
             ¡Cada sábado, nuestros 6 equipos de ganadores de almas salen a las
             calles para llevar el evangelio! Con rutas estratégicas en cada
             zona, recogemos a nuestros hermanos los días domingos y juntos nos
@@ -106,7 +104,7 @@ import { slide } from "astro:transitions";
     </section>
 
     <!-- Sección 3: Jóvenes con degradado de mc2 a mc1 -->
-    <section class="text-center bg-gradient-to-b from-mc2 via-mc3 to-mc1">
+    <section class="text-center">
       <div
         class="relative flex flex-col md:flex-row-reverse items-center container mx-auto"
       >
@@ -115,9 +113,9 @@ import { slide } from "astro:transitions";
           class="w-full md:w-1/2 rounded-lg shadow-lg"
           alt="Mudanza a Chorrillos"
         />
-        <div class="md:w-1/2 p-8 text-left text-white">
+        <div class="md:w-1/2 p-8 text-left text-mc3">
           <h2 class="text-5xl font-black mb-4">Jóvenes</h2>
-          <p class="text-lg">
+          <p class="text-lg text-white">
             ¡Nuestro grupo de jóvenes ha crecido exponencialmente! Con reuniones
             que superan los 70 asistentes, hemos sido testigos de cómo una
             pequeña semilla se ha convertido en un frondoso árbol. Lo más

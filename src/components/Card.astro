@@ -7,8 +7,10 @@ interface Props {
 const { title, body } = Astro.props;
 ---
 
-<li class="link-card list-none p-7 m-4 bg-mc3 bg-cover rounded-lg">
-  <h2 class="font-extrabold text-mc1 text-2xl">
+<li
+  class="link-card list-none p-7 m-4 ring-2 ring-mc3 ring-inset bg-cover rounded-lg"
+>
+  <h2 class="font-extrabold text-mc3 text-2xl">
     {title}
   </h2>
   <p class="text-white font-bold text-lg">

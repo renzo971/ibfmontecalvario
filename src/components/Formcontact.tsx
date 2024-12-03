@@ -38,7 +38,7 @@ export default function FormContact() {
       <div className="mb-6">
         <label
           htmlFor="name"
-          className="block mb-2 text-sm font-medium text-gray-900 "
+          className="block mb-2 text-sm font-medium text-white "
         >
           Nombre
         </label>
@@ -55,7 +55,7 @@ export default function FormContact() {
       <div className="mb-6">
         <label
           htmlFor="Email"
-          className="block mb-2 text-sm font-medium text-gray-900 "
+          className="block mb-2 text-sm font-medium text-white "
         >
           Email
         </label>
@@ -72,7 +72,7 @@ export default function FormContact() {
       <div className="mb-6">
         <label
           htmlFor="message"
-          className="block mb-2 text-sm font-medium text-gray-900 "
+          className="block mb-2 text-sm font-medium text-white "
         >
           Mensaje
         </label>

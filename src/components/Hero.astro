@@ -1,10 +1,11 @@
 ---
-
+import { Image } from "astro:assets";
+import Logo from "@/images/iglesia.png";
 ---
 
 <section class="hero min-h-[90vh]">
-  <div class="container" transition:animate="slide">
-    <h1>Bienvenidos a la iglesia bautista Monte Calvario</h1>
+  <Image src={Logo} alt="Logoibf" class="logo" height={400} loading="eager" />
+  <div class="container" transition:animate="fade">
     <p>Un lugar de fe, esperanza y amor por las almas</p>
 
     <div class="flex justify-center gap-4">
@@ -23,19 +24,24 @@
 </section>
 
 <style>
+  .logo {
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 0.8));
+  }
   .hero {
-    background-image: linear-gradient(
-        rgba(2, 48, 96),
-        rgba(50, 111, 177, 0.8),
-        rgba(0, 32, 91, 0.8)
-      ),
-      url("../images/iglesiacompleta.jpg");
     background-size: cover;
     background-position: center;
     color: var(--color-background);
-    text-align: center;
-    padding: 10rem 0;
+    /* Add these lines */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    /* --- */
+    text-align: center; /* This remains useful for text within the hero */
+    padding: 5rem 0; /* Consider removing or adjusting padding if needed */
+    min-height: 90vh; /* Maintain minimum height */
   }
+
   .container {
     max-width: 800px;
     margin: 0 auto;

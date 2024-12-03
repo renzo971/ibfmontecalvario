@@ -5,6 +5,8 @@ interface Props {
 
 const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
+import NoiseBackground from "@/components/NoiseBackground.astro";
+import LightsBackground from "@/components/LightsBackground.astro";
 ---
 
 <!doctype html>
@@ -18,34 +20,98 @@ import { ViewTransitions } from "astro:transitions";
     <title>{title}</title>
     <ViewTransitions />
   </head>
-  <body>
-    <slot />
+  <body
+    class="overflow-x-hidden selection:bg-primary selection:text-secondary [&_:focus-visible]:outline-none [&_:focus-visible]:ring-2 [&_:focus-visible]:ring-primary"
+  >
+    <NoiseBackground />
+    <LightsBackground />
+    <div
+      class="mx-auto min-h-screen max-w-6xl px-2 selection:bg-primary selection:text-secondary lg:px-10"
+      id="main-content"
+    >
+      <slot />
+    </div>
   </body>
 </html>
 <style is:global>
   :root {
-    --accent: 136, 58, 234;
-    --accent-light: 224, 204, 250;
-    --accent-dark: 49, 10, 101;
-    --accent-gradient: linear-gradient(
-      45deg,
-      rgb(var(--accent)),
-      rgb(var(--accent-light)) 30%,
-      white 60%
-    );
+    --color-primary: #ddd;
+    --color-secondary: #333;
+    --color-accent: #b4cd02;
+    --color-accent-rgb: 213, 255, 0;
+
+    --background-color: #141800;
+    --background-twitch: var(--color-twitch-ice);
+
+    --color-twitch: #9146ff;
+    --color-twitch-ice: #f0f0ff;
   }
   html {
-    font-family: system-ui, sans-serif;
+    font-family: "Jost Variable", system-ui, sans-serif;
+    background: var(--background-color);
+    scrollbar-gutter: stable;
   }
-  code {
-    font-family:
-      Menlo,
-      Monaco,
-      Lucida Console,
-      Liberation Mono,
-      DejaVu Sans Mono,
-      Bitstream Vera Sans Mono,
-      Courier New,
-      monospace;
+  main {
+    position: relative;
+  }
+
+  body {
+    &:has(dialog[open]) {
+      overflow: hidden;
+    }
+  }
+  /* Hiding class, making content visible only to screen readers but not visually */
+  /* "sr" meaning "screen-reader" */
+  .sr-only:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  @supports selector(::-webkit-scrollbar) {
+    @media (hover: hover) {
+      ::-webkit-scrollbar {
+        width: 10px;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: theme("colors.primary");
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+
+      ::-webkit-scrollbar-thumb:active {
+        background-color: #666;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: var(--background-image);
+      }
+
+      ::-webkit-scrollbar-corner {
+        background: var(--background-image);
+      }
+    }
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    * {
+      scrollbar-color: theme("colors.primary") transparent;
+      scrollbar-width: thin;
+    }
+  }
+
+  .anchor-main-content {
+    pointer-events: none;
+  }
+
+  .anchor-main-content:focus {
+    pointer-events: all;
   }
 </style>
