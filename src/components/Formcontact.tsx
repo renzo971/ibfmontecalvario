@@ -92,7 +92,9 @@ export default function FormContact() {
       >
         {isLoading ? "Enviando..." : "Enviar"}
       </button>
-      {responseMessage && <Toast />}
+      {responseMessage && (
+        <Toast status={responseMessage} setStatus={setResponseMessage} />
+      )}
     </form>
   );
 }
