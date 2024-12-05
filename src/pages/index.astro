@@ -1,46 +1,28 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import logo from "../assets/iglesia.png";
-import Info from "@/components/Info.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Features from "../components/Features.astro";
+import UpcomingEvents from "../components/UpcomingEvents.astro";
+import Footer from "../components/Footer.astro";
+import Pastor from "../components/Pastor.astro";
 ---
 
 <Layout
-  title="IBF-Monte Calvario"
   title="Iglesia Bautista Fundamental Monte Calvario"
   description="Nosotros somos una Iglesia Bautista enfocada en la ganancia de almas y como base que la unica guía de nuestra vida es la biblia"
   canonical="https://ibfmontecalvario.vercel.app"
 >
-  <main class="h-screen bg-gradient-to-b from-white to-[#021825]">
-    <div
-      class="flex flex-col justify-center items-center text-center sm:mt-10 md:mt-5"
-    >
-      <div class="bg-[#133c55] text-white border sm:my-2 md:my-0 lg:my- w-full">
-        <h1 class="text-lg font-bold">Estamos en mantenimiento</h1>
-      </div>
-      <div class="lg:py-6 md:py-6 py-24">
-        <Image src={logo} alt="logomc" class="w-80 mx-auto" />
-      </div>
-    </div>
-    <div
-      class="flex flex-col justify-center items-center text-center sm:pt-6 md:pt-0 lg:pt-0"
-    >
-      <p class="text-[#153144] text-lg font-bold mb-6">Síguenos en</p>
-      <div class="flex flex-col space-y-4 mb-8 w-full max-w-xs">
-        <a
-          href="https://wa.me/+51966600819"
-          class="bg-[#c7f9cc] text-[#235b7c] text-xl font-semibold py-3 px-10 rounded-full shadow-lg"
-        >
-          WhatsApp
-        </a>
-        <a
-          href="https://www.google.com/maps/place/Calle+Sta+Mercedes+183,+Lima+15067/@-12.1897879,-77.0120983,17z/data=!3m1!4b1!4m5!3m4!1s0x9105b9d8bc53874b:0x7ffc2bd3074530f8!8m2!3d-12.1897932!4d-77.0095234?entry=ttu&g_ep=EgoyMDI0MTAyOS4wIKXMDSoASAFQAw%3D%3D"
-          class="bg-[#c7f9cc] text-[#235b7c] text-xl font-semibold py-3 px-10 rounded-full shadow-lg"
-        >
-          Ubicación
-        </a>
-        <Info />
-      </div>
-    </div>
+  <main>
+    <Hero />
+    <Pastor />
+    <Features />
+    <UpcomingEvents />
   </main>
 </Layout>
+
+<style>
+  main {
+    width: 100%;
+  }
+</style>
