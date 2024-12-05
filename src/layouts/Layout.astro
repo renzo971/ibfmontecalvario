@@ -1,23 +1,37 @@
 ---
-interface Props {
-  title: string;
-}
-
-const { title } = Astro.props;
 import { ViewTransitions } from "astro:transitions";
 import NoiseBackground from "@/components/NoiseBackground.astro";
 import LightsBackground from "@/components/LightsBackground.astro";
+import SEO from "@/components/SEO.astro";
+interface Preload {
+  as: string;
+  href: string;
+  type: string;
+  rel?: "preload" | "prefetch";
+  crossorigin?: string;
+}
+interface Props {
+  title: string;
+  description: string;
+  preload?: Array<Preload>;
+  canonical?: string;
+  image?: string;
+}
+const { title, description, preload, canonical, image } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/png" href="/iglesia.png" />
+    <SEO
+      canonical={canonical}
+      description={description}
+      image={image}
+      preload={preload}
+      title={title}
+    />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
+
     <ViewTransitions />
   </head>
   <body

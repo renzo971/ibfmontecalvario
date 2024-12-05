@@ -6,6 +6,8 @@ import Footer from "@/components/Footer.astro";
 
 <Layout
   title="El Camino al Cielo - Iglesia Bautista Fundamental Monte Calvario"
+  description="Nuestra principal meta es que tu seas salvo y puedas ir al cielo reconociendo a Dios como tu salvador"
+  canonical="https://ibfmontecalvario.vercel.app/camino-al-cielo"
 >
   <Header />
   <main>
@@ -65,7 +67,9 @@ import Footer from "@/components/Footer.astro";
               nueva vida, te invitamos a hablar con uno de nuestros pastores o
               líderes.
             </p>
-            <a href="/contacto" class="cta-button">Contáctanos</a>
+            <a href="/contacto" class="cta-button bg-mc3 text-white"
+              >Contáctanos</a
+            >
           </div>
         </div>
       </div>
@@ -112,8 +116,6 @@ import Footer from "@/components/Footer.astro";
   }
   .cta-button {
     display: inline-block;
-    background-color: var(--color-primary);
-    color: var(--color-background);
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;

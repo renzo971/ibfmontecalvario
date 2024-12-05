@@ -1,1 +1,32 @@
-[]
+[
+  {
+    "date": "2024-12-22",
+    "time": "09:00",
+    "title": "Chocolatada navieña en las rutas del culto A",
+    "description": "Ven a celebrar con nosotros el nacimiento de nustro señor Jesucristo, si o pertencees a ningua Ruta ven y con mucho gusto te recibiremos"
+  },
+  {
+    "date": "2024-12-22",
+    "time": "11:00",
+    "title": "Chocolatada navieña en las rutas del culto B",
+    "description": "Ven a celebrar con nosotros el nacimiento de nustro señor Jesucristo, si o pertencees a ningua Ruta ven y con mucho gusto te recibiremos"
+  },
+  {
+    "date": "2025-01-3",
+    "time": "18:00",
+    "title": "Conferencia con el pastor Danny Ortiz",
+    "description": "Tendremos como pstor invitado al Ps. Danny Ortiz"
+  },
+  {
+    "date": "2025-01-4",
+    "time": "16:30",
+    "title": "Predicacion a los jóvenes con el pastor Danny Ortiz",
+    "description": "Tendremos como pstor invitado al Ps. Danny Ortiz"
+  },
+  {
+    "date": "2025-01-5",
+    "time": "09:00",
+    "title": "Conferencia con el pastor Danny Ortiz",
+    "description": "Tendremos como pstor invitado al Ps. Danny Ortiz"
+  }
+]

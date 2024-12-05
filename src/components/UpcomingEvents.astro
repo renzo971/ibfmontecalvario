@@ -4,14 +4,14 @@ import events from "../assets/events.json";
 
 <section class="upcoming-events">
   <div class="container">
-    <h2 class="text-mc1 font-bold">Próximos Eventos</h2>
+    <h2 class="text-mc3 font-bold">Próximos Eventos</h2>
     {
       events.length !== 0 ? (
         <div>
           <div class="events-grid">
-            {events.map((event) => (
+            {events.slice(0, 3).map((event) => (
               <div class="event-card">
-                <div class="event-date">
+                <div class="event-date bg-mc3">
                   <span class="day">{new Date(event.date).getDate()}</span>
                   <span class="month">
                     {new Date(event.date).toLocaleString("es", {
@@ -20,7 +20,7 @@ import events from "../assets/events.json";
                   </span>
                 </div>
                 <div class="event-details">
-                  <h3>{event.title}</h3>
+                  <h3 class="text-mc2 font-bold">{event.title}</h3>
                   <p class="event-time">{event.time}</p>
                   <p>{event.description}</p>
                 </div>
@@ -49,7 +49,6 @@ import events from "../assets/events.json";
     text-align: center;
   }
   h2 {
-    color: var(--color-primary);
     font-size: 2.5rem;
     margin-bottom: 3rem;
   }
@@ -71,8 +70,6 @@ import events from "../assets/events.json";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-background);
     padding: 1rem;
     min-width: 80px;
   }
@@ -87,10 +84,7 @@ import events from "../assets/events.json";
     padding: 1rem;
     text-align: left;
   }
-  .event-details h3 {
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
+
   .event-time {
     color: var(--color-secondary);
     font-weight: bold;

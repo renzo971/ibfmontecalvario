@@ -1,0 +1,26 @@
+{
+  "name": "Iglesia bautista fundamental Monte Calvario",
+  "short_name": "ibf Monte Calvario",
+  "description": "Somos una iglesia enfocada en la ganancia de almas como mandamiento principal y nos basamos en que la biblia es nuestro unico camino de vida",
+  "theme_color": "#d5ff00",
+  "background_color": "#d5ff00",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "/iglesia.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/iglesia.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/iglesia.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

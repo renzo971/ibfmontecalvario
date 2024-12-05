@@ -1,0 +1,89 @@
+---
+/** https://developers.google.com/search/docs/appearance/structured-data/organization */
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  url: "https://ibfmontecalvario.vercel.app/",
+  image:
+    "https://ibfmontecalvario.vercel.app/_astro/logopuro.BYL1Af_7_Z13tWo9.webp",
+  sameAs: [
+    "https://www.facebook.com/IBFMonteCalvarioLima",
+    "https://github.com/renzo971",
+  ],
+  logo: "https://ibfmontecalvario.vercel.app/_astro/logopuro.BYL1Af_7_Z13tWo9.webp",
+  name: "Iglesia bautista fundamental Monte Calvario",
+  alternateName: "ibf Monte Calvario",
+  description:
+    "Somos una iglesia enfocada en la ganancia de almas como mandamiento principal y nos basamos en que la biblia es nuestro unico camino de vida",
+};
+
+/** https://developers.google.com/search/docs/appearance/structured-data/event */
+const eventSchema = {
+  "@context": "https://schema.org",
+  "@type": "Event",
+  name: "Culto de domingo",
+  startDate: "2024-12-08T10:00:00",
+  endDate: "2024-12-08T13:00:00",
+  recurrence: "RRULE:FREQ=WEEKLY;BYDAY=SU",
+  eventAttendanceMode: "https://schema.org/MixedEventAttendanceMode", // https://schema.org/EventAttendanceModeEnumeration
+  eventStatus: "https://schema.org/EventScheduled", // https://schema.org/EventStatusType
+  location: {
+    "@type": "Place",
+    name: "Local de la iglesia",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Jiron Sta. Mercedes 183",
+      addressLocality: "Chorrillos",
+      postalCode: "15066",
+      addressRegion: "Lima",
+      addressCountry: "PE",
+    },
+  },
+  image: [
+    "https://ibfmontecalvario.vercel.app/_astro/logopuro.BYL1Af_7_Z13tWo9.webp",
+  ],
+  description:
+    "Somos una iglesia enfocada en la ganancia de almas como mandamiento principal y nos basamos en que la biblia es nuestro unico camino de vida",
+  /* "offers": {}, // Añadir cuando las entradas estén disponibles https://schema.org/Offer */
+
+  organizer: {
+    "@type": "Person",
+    name: "Artemio Galeote",
+    url: "https://www.facebook.com/IBFMonteCalvarioLima",
+  },
+};
+
+const FAQs = [
+  {
+    question: "¿Qué necesito para ser salvo?",
+    answer: "Sólo necesitas reconocer a Jesús como tu salvador",
+  },
+  {
+    question: "¿Qué necesito para ir a sus cultos?",
+    answer: "Deseo de aprender y conocer mas a Dios",
+  },
+];
+
+/** https://developers.google.com/search/docs/appearance/structured-data/faqpage */
+const FAQSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    FAQs.map(({ answer, question }) => ({
+      "@type": "Question",
+      name: question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: answer,
+      },
+    })),
+  ],
+};
+---
+
+<script
+  type="application/ld+json"
+  set:html={JSON.stringify(organizationSchema)}
+/>
+<script type="application/ld+json" set:html={JSON.stringify(eventSchema)} />
+<script type="application/ld+json" set:html={JSON.stringify(FAQSchema)} />

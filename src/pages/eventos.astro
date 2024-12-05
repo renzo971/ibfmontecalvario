@@ -5,17 +5,21 @@ import Footer from "@/components/Footer.astro";
 import events from "../assets/events.json";
 ---
 
-<Layout title="Eventos - Iglesia Bautista Fundamental Monte Calvario">
+<Layout
+  title="Eventos - Iglesia Bautista Fundamental Monte Calvario"
+  description="Eventos mas proximos de nuestr iglesia para que puedas compartir"
+  canonical="https://ibfmontecalvario.vercel.app/eventos"
+>
   <Header />
   <main>
     <section class="eventos">
       <div class="container">
-        <h1>Próximos Eventos</h1>
+        <h1 class="text-white font-bold">Próximos Eventos</h1>
         <div class="events-list">
           {
             events.map((event) => (
               <div class="event-card">
-                <div class="event-date">
+                <div class="event-date bg-mc3 text-white">
                   <span class="day">{new Date(event.date).getDate()}</span>
                   <span class="month">
                     {new Date(event.date).toLocaleString("es", {
@@ -24,7 +28,7 @@ import events from "../assets/events.json";
                   </span>
                 </div>
                 <div class="event-details">
-                  <h3>{event.title}</h3>
+                  <h3 class="text-mc2 font-bold">{event.title}</h3>
                   <p class="event-time">{event.time}</p>
                   <p>{event.description}</p>
                 </div>
@@ -47,7 +51,6 @@ import events from "../assets/events.json";
     margin: 0 auto;
   }
   h1 {
-    color: var(--color-primary);
     font-size: 2.5rem;
     margin-bottom: 2rem;
     text-align: center;
@@ -69,8 +72,6 @@ import events from "../assets/events.json";
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: var(--color-primary);
-    color: var(--color-background);
     padding: 1rem;
     min-width: 80px;
   }
@@ -84,10 +85,7 @@ import events from "../assets/events.json";
   .event-details {
     padding: 1rem;
   }
-  .event-details h3 {
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
+
   .event-time {
     color: var(--color-secondary);
     font-weight: bold;
