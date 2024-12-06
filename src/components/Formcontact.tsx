@@ -5,6 +5,11 @@ import Toast from "./Toast";
 export default function FormContact() {
   const [responseMessage, setResponseMessage] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
   async function submit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true); // Mostrar loading al enviar
@@ -22,6 +27,11 @@ export default function FormContact() {
 
     if (data.success === true) {
       setResponseMessage(true);
+      setData({
+        name: "",
+        email: "",
+        message: "",
+      });
     }
     setIsLoading(false);
   }
@@ -49,6 +59,8 @@ export default function FormContact() {
           autoComplete="name"
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           placeholder="Nombre..."
+          value={data.name}
+          onChange={(e) => setData({ ...data, name: e.target.value })}
           required
         />
       </div>
@@ -66,6 +78,8 @@ export default function FormContact() {
           className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
           autoComplete="email"
           placeholder="Emal..."
+          value={data.email}
+          onChange={(e) => setData({ ...data, email: e.target.value })}
           required
         />
       </div>
@@ -83,6 +97,8 @@ export default function FormContact() {
           autoComplete="off"
           placeholder="Dejanos un mensaje..."
           required
+          value={data.message}
+          onChange={(e) => setData({ ...data, message: e.target.value })}
         />
       </div>
 
